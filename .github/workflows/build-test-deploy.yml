@@ -19,7 +19,7 @@ jobs:
     - name: Setup Java
       uses: actions/setup-java@v5.0.0
       with:
-        java_version: 17
+        java-version: 17
         distribution: zulu
       
     - name: Construire Package
