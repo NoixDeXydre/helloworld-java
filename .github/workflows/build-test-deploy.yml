@@ -1,0 +1,17 @@
+name: TP 2 package JAR
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  PROJECT_VERSION: "1.0.0"
+
+jobs:
+  NomDeMonJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "test"
+        run: echo "test"
