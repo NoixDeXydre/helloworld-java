@@ -17,6 +17,10 @@ jobs:
 
     - uses: actions/checkout@6.0.0
     - name: Setup Java
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v5.0.0
+      with:
+        java_version: 17
+        distribution: zulu
+      
     - name: Construire Package
       run: mvn clean package -DskipTests
