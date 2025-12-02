@@ -23,9 +23,6 @@ jobs:
         java-version: 17
         distribution: zulu
 
-    - name: Prep cache
-      run: "mkdir ~/dependances"
-
     - name: Cache Dependances
       uses: actions/cache@main
       with:
