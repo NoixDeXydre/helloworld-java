@@ -24,7 +24,7 @@ jobs:
         distribution: zulu
 
     - name: Prep cache
-      run: "sudo mkdir /dependances && sudo mkdir /dependances/lib"
+      run: "sudo mkdir /dependances && sudo mkdir /dependances/lib && sudo chmod 777 /dependances"
 
     - name: Cache Dependances
       uses: actions/cache@main
