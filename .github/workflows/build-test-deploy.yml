@@ -31,3 +31,25 @@ jobs:
           
     - name: Construire Package
       run: mvn clean package -DskipTests ${MAVEN_OPTS}
+
+      
+  Tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@main
+    - name: Setup Java
+      uses: actions/setup-java@v5.0.0
+      with:
+        java-version: 17
+        distribution: zulu
+
+    - name: Cache Dependances
+      uses: actions/cache@main
+      with:
+        path: "${{github.workspace}}/.m2/repository"
+        key: "clé au pif"
+          
+    - name: Construire Package
+      run: mvn test ${MAVEN_OPTS}
