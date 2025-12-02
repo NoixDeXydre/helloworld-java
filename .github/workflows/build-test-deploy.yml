@@ -27,6 +27,7 @@ jobs:
       uses: actions/cache@main
       with:
         path: "/dependances/lib"
+        key: "clé au pif"
           
     - name: Construire Package
       run: mvn clean package -DskipTests ${MAVEN_OPTS}
