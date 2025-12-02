@@ -8,7 +8,7 @@ on:
 
 env:
   PROJECT_VERSION: "1.0.0"
-  MAVEN_OPTS: "-Dmaven.repo.local=/dependances/lib"
+  MAVEN_OPTS: "-Dmaven.repo.local=~/dependances/lib"
 
 jobs:
   Build:
@@ -24,12 +24,12 @@ jobs:
         distribution: zulu
 
     - name: Prep cache
-      run: "sudo mkdir /dependances && sudo mkdir /dependances/lib && sudo chmod 777 /dependances"
+      run: "sudo mkdir ~/dependances && sudo mkdir ~/dependances/lib && sudo chmod 777 ~/dependances"
 
     - name: Cache Dependances
       uses: actions/cache@main
       with:
-        path: "/dependances/lib"
+        path: "~/dependances/lib"
         key: "clé au pif"
           
     - name: Construire Package
