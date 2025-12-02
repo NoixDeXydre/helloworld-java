@@ -11,7 +11,8 @@ public class AppTest {
 	
 	@Test
     void testKoApp() {
-        assertTrue(true);
+        assertTrue(false);
     }
 }
+
 
