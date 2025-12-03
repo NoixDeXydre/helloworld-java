@@ -35,7 +35,7 @@ jobs:
     - name: Pousser Artifact
       uses: actions/upload-artifact@main
       with:
-        name: Hello-${PROJECT_VERSION}.jar
+        name: Hello-${{env.PROJECT_VERSION}}.jar
         path: target/helloworld-1.0-SNAPSHOT.jar
 
       
