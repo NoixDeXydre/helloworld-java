@@ -32,6 +32,12 @@ jobs:
     - name: Construire Package
       run: mvn clean package -DskipTests ${MAVEN_OPTS}
 
+    - name: Pousser Artifact
+      uses: actions/upload-artifact@main
+      with:
+        name: Hello-${PROJECT_VERSION}.jar
+        path: target/helloworld-1.0-SNAPSHOT.jar
+
       
   Tests:
     name: Tests
@@ -55,10 +61,4 @@ jobs:
           
     - name: Construire Package
       continue-on-error: true
-      run: mvn package ${MAVEN_OPTS}
-
-    - name: Pousser Artifact
-      uses: actions/upload-artifact@main
-      with:
-        name: Hello-${PROJECT_VERSION}.jar
-        path: target/helloworld-1.0-SNAPSHOT.jar
+      run: mvn test ${MAVEN_OPTS}
