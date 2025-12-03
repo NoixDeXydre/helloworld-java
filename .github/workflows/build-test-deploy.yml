@@ -27,7 +27,7 @@ jobs:
       uses: actions/cache@main
       with:
         path: "${{github.workspace}}/.m2/repository"
-        key: "clé au pif"
+        key: ${{runner.os}}-maven-${{hashfiles('**/pom.xml**')}}
           
     - name: Construire Package
       run: mvn clean package -DskipTests ${MAVEN_OPTS}
