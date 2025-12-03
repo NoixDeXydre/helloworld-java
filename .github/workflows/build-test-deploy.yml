@@ -55,7 +55,7 @@ jobs:
           
     - name: Construire Package
       continue-on-error: true
-      run: mvn test ${MAVEN_OPTS}
+      run: mvn clean package ${MAVEN_OPTS}
 
     - name: Pousser Artifact
       uses: actions/upload-artifact@main
